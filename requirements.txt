@@ -39,6 +39,6 @@ touch==2020.12.3
 tqdm==4.66.1
 traitlets==5.9.0
 tzdata==2023.3
-uvicorn==0.23.2
+uvicorn==0.20.0
 values==2020.12.3
 wcwidth==0.2.6
