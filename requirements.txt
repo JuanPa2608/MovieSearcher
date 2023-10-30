@@ -3,6 +3,7 @@ asttokens==2.4.0
 backcall==0.2.0
 click==8.1.7
 colorama==0.4.6
+fastapi==0.93.0
 comm==0.1.4
 cramjam==2.7.0
 debugpy==1.7.0
