@@ -9,7 +9,7 @@ async def ruta_prueba():
     return "Hola"
 
 
-df_PlayTimeGenre.read_parquet('..\\Funciones\\datasets\\PlayTimeGenre.parquet',index=False)
+df_PlayTimeGenre = pd.read_parquet('..\\Funciones\\datasets\\PlayTimeGenre.parquet',index=False)
 
 @app.get("/PlayTimeGenre")
 async def PlayTimeGenre(genre):
