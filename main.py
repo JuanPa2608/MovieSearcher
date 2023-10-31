@@ -26,8 +26,8 @@ async def UserForGenre(genre):
 df_UsersRecommend = pd.read_parquet('datasets/UsersRecommend.parquet')
 
 @app.get("/UsersRecommend")
-async def UsersRecommend(int anio):
-    top_recomend = df_UsersRecommend[df_UsersRecommend['year_posted'] == anio]
+async def UsersRecommend(anio):
+    top_recomend = df_UsersRecommend[df_UsersRecommend['year_posted'] == int(anio)]
     top_recomend.reset_index(drop = True,inplace = True)
     return str('Items_id Puesto 1: '+ top_recomend['item_id'][0] + ' Puesto 2: '+ top_recomend['item_id'][1] + ' Puesto 3: '+ top_recomend['item_id'][2])
     #return str(type(anio))
