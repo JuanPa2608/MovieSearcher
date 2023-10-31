@@ -30,6 +30,13 @@ async def UsersRecommend(anio):
     top_recomend = df_UsersRecommend[df_UsersRecommend['year_posted'] == int(anio)]
     top_recomend.reset_index(drop = True,inplace = True)
     return str('Items_id Puesto 1: '+ top_recomend['item_id'][0] + ' Puesto 2: '+ top_recomend['item_id'][1] + ' Puesto 3: '+ top_recomend['item_id'][2])
-    #return str(type(anio))
+
+df_UsersNotRecommend = pd.read_parquet('datasets/UsersNotRecommend.parquet')
+
+@app.get("/UsersNotRecommend")
+async def UsersNotRecommend(anio):
+    top_not_recomend = df_UsersNotRecommend[df_UsersNotRecommend['year_posted'] == int(anio)]
+    top_not_recomend.reset_index(drop = True,inplace = True)
+    return str('Items_id Puesto 1: '+ top_not_recomend['item_id'][0] + ' Puesto 2: '+ top_not_recomend['item_id'][1] + ' Puesto 3: '+ top_not_recomend['item_id'][2])
     
 
