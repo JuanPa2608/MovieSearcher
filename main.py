@@ -45,6 +45,6 @@ df_SentimentRecommend = pd.read_parquet('datasets/SentimentRecommend.parquet')
 async def sentiment_analysis(anio):
     analisis_sentimiento = df_SentimentRecommend[df_SentimentRecommend['year_posted'] == int(anio)]
     return str('Negative: '+ str(analisis_sentimiento['sentiment_analysis'][analisis_sentimiento['sentiment_analysis'] == 'Negative'].count()) +
-                 'Neutral: '+ str(analisis_sentimiento['sentiment_analysis'][analisis_sentimiento['sentiment_analysis'] == 'Neutral'].count()) +
-                 'Positive: '+ str(analisis_sentimiento['sentiment_analysis'][analisis_sentimiento['sentiment_analysis'] == 'Positive'].count()))
+                 ' Neutral: '+ str(analisis_sentimiento['sentiment_analysis'][analisis_sentimiento['sentiment_analysis'] == 'Neutral'].count()) +
+                 ' Positive: '+ str(analisis_sentimiento['sentiment_analysis'][analisis_sentimiento['sentiment_analysis'] == 'Positive'].count()))
 
