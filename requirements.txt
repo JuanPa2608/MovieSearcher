@@ -2,3 +2,6 @@ anyio
 pandas
 asttokens
 uvicorn
+pydantic
+starlette
+typing-extensions
