@@ -23,4 +23,11 @@ async def UserForGenre(genre):
     lista = df_UserForGenre[genre][1]
     return str('Usuario con más horas jugadas para Género ' + genre + ': ' + user + ' Horas jugadas: ' + lista)
 
+df_UsersRecommend = pd.read_parquet('datasets/UsersRecommend.parquet')
+
+@app.get("/UsersRecommend")
+async def UsersRecommend(anio):
+    top_recomend = df_UsersRecommend[df_UsersRecommend['year_posted'] == anio]
+    return str('Puesto 1: '+ top_recomend[0] + 'Puesto 2: '+ top_recomend[1] + 'Puesto 3: '+ top_recomend[2])
+    
 
