@@ -38,5 +38,13 @@ async def UsersNotRecommend(anio):
     top_not_recomend = df_UsersNotRecommend[df_UsersNotRecommend['year_posted'] == int(anio)]
     top_not_recomend.reset_index(drop = True,inplace = True)
     return str('Items_id Puesto 1: '+ top_not_recomend['item_id'][0] + ' Puesto 2: '+ top_not_recomend['item_id'][1] + ' Puesto 3: '+ top_not_recomend['item_id'][2])
-    
+
+df_SentimentRecommend = pd.read_parquet('datasets/SentimentRecommend.parquet')
+
+@app.get("/sentiment_analysis")
+async def sentiment_analysis(anio):
+    analisis_sentimiento = df_SentimentRecommend[df_SentimentRecommend['year_posted'] == int(anio)]
+    return str('Negative: '+ analisis_sentimiento['sentiment_analysis'][analisis_sentimiento['sentiment_analysis'] == 'Negative'].count() +
+                 'Neutral: '+ analisis_sentimiento['sentiment_analysis'][analisis_sentimiento['sentiment_analysis'] == 'Neutral'].count() +
+                 'Positive: '+ analisis_sentimiento['sentiment_analysis'][analisis_sentimiento['sentiment_analysis'] == 'Positive'].count())
 
