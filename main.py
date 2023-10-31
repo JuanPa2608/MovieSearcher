@@ -8,7 +8,7 @@ app = FastAPI()
 async def ruta_prueba():
     return "Hola"
 
-df_PlayTimeGenre = pd.read_parquet('datasets/PlayTimeGenre.parquet',index=False)
+df_PlayTimeGenre = pd.read_parquet('datasets/PlayTimeGenre.parquet')
 
 @app.get("/PlayTimeGenre")
 async def PlayTimeGenre(genre):
