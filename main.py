@@ -19,7 +19,8 @@ df_UserForGenre = pd.read_csv('datasets/UserForGenre.csv')
 
 @app.get("/UserForGenre")
 async def UserForGenre(genre):
-    lista = df_UserForGenre[genre]['user']
-    return str('Usuario con más horas jugadas para Género: ' + genre + ' Horas jugadas: ' + str(anio))
+    user = df_UserForGenre[genre][0]
+    lista = df_UserForGenre[genre][1]
+    return str('Usuario con más horas jugadas para Género ' + genre + ': ' + user + ' Horas jugadas: ' + lista)
 
 
