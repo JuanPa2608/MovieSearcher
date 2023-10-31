@@ -5,3 +5,4 @@ uvicorn
 pydantic
 starlette
 typing-extensions
+fastapi
