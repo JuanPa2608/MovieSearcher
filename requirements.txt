@@ -1,3 +1,4 @@
 anyio
 pandas
 asttokens
+uvicorn
