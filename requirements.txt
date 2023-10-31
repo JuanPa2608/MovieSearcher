@@ -6,3 +6,5 @@ pydantic
 starlette
 typing-extensions
 fastapi
+fastparquet
+pyarrow
