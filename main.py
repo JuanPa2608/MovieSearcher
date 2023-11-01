@@ -15,7 +15,7 @@ async def PlayTimeGenre(genre):
     anio = df_PlayTimeGenre['release_year'][df_PlayTimeGenre['Sum_playtime_forever'][df_PlayTimeGenre['genres'] == genre].idxmax()]
     return str('Año de lanzamiento con más horas jugadas para Género ' + genre + ': ' + str(anio))
 
-df_UserForGenre = pd.read_parquet('datasets/datasets/UserForGenre.parquet')
+df_UserForGenre = pd.read_parquet('datasets/datasets/UserForGenre_total.parquet')
 
 @app.get("/UserForGenre")
 async def UserForGenre(genre):
