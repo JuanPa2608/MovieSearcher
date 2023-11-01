@@ -20,4 +20,25 @@ nltk.sentiment.vader: Procesador de Lenguaje Natural (NPL) analisis de sentimien
 seaborn: Libreria utilizada para graficos EDA
 matplotlib.pyplot: Libreria utilizada para graficos EDA
 
-github: https://github.com/JuanPa2608
+Secuencia de trabajo:
+
+1- ETL(Extraction Transform Load). Se extrajo la data de gzip en formatdo JSON, se guardo la data ordenada en formatos csv y parquet en la carpeta datasets\New_datasets
+Se utilizo: extraccion.ipynb
+Librerias: json, gzip, pandas, ast, pdb, numpy y datetime.
+
+2- NLP (Natural Language Processing). Se analizo la columna revies del dataframe user_reviews, se hizo un analisis de sentimientos agregando una columna indicando se era un comentario negativo, neutro o positivo.
+Se utilizo: sentimental_analisys.ipynb
+Librerias: pandas, nltk.sentiment.vader, SentimentIntensityAnalyzer y pdb
+
+3- Functions for End Points. En base a los nuevos dataframes, se filtro y ordeno los datos para alimentar a la API y responder directamente ocupando menos memoria que los dataframes originales.
+Se guardo nuevos dataframes en carpeta 
+Se utilizo: datasets_functions.ipynb
+Librerias: pandas, ast y pdb
+
+4- EDA (Exploratory data analysis). Se realizo un analisis sobre los nuevos datasets, se presentan caracteristicas de los datos.
+Se utilizo: EDA.ipynb
+Librerias: pandas, seaborn y matplotlib.pyplot 
+
+Perfil github: https://github.com/JuanPa2608/
+Perfil Linkedin: https://www.linkedin.com/in/juan-pablo-espinoza-cortez-977013170/
+Link del Web Service: https://steamrecommender.onrender.com/docs
