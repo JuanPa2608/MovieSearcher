@@ -29,16 +29,20 @@ df_UsersRecommend = pd.read_parquet('Funciones/datasets/UsersRecommend.parquet')
 async def UsersRecommend(anio):
     top_recomend = df_UsersRecommend[df_UsersRecommend['year_posted'] == int(anio)]
     top_recomend.reset_index(drop = True,inplace = True)
-    return str('Items_id Puesto 1: '+ top_recomend['item_id'][0] + ' Puesto 2: '+ top_recomend['item_id'][1] + ' Puesto 3: '+ top_recomend['item_id'][2])
-
+    return str('Items_id-Item_Name Puesto 1: '+ top_recomend['item_id'][0] + '-' + top_recomend['item_name'][0] +
+                ' Puesto 2: '+ top_recomend['item_id'][1] + '-' + top_recomend['item_name'][1] +
+                ' Puesto 3: '+ top_recomend['item_id'][2] + '-' + top_recomend['item_name'][2] )
+    
 df_UsersNotRecommend = pd.read_parquet('Funciones/datasets/UsersNotRecommend.parquet')
 
 @app.get("/UsersNotRecommend")
 async def UsersNotRecommend(anio):
     top_not_recomend = df_UsersNotRecommend[df_UsersNotRecommend['year_posted'] == int(anio)]
     top_not_recomend.reset_index(drop = True,inplace = True)
-    return str('Items_id Puesto 1: '+ top_not_recomend['item_id'][0] + ' Puesto 2: '+ top_not_recomend['item_id'][1] + ' Puesto 3: '+ top_not_recomend['item_id'][2])
-
+    return str('Items_id-Item_Name Puesto 1: '+ top_not_recomend['item_id'][0] + '-' + top_not_recomend['item_name'][0] +
+                ' Puesto 2: '+ top_not_recomend['item_id'][1] + '-' + top_not_recomend['item_name'][1] +
+                ' Puesto 3: '+ top_not_recomend['item_id'][2] + '-' + top_not_recomend['item_name'][2] )
+    
 df_SentimentRecommend = pd.read_parquet('Funciones/datasets/SentimentRecommend.parquet')
 
 @app.get("/sentiment_analysis")
